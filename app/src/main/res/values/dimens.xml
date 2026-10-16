@@ -2,8 +2,14 @@
 <resources>
         <dimen name="form_padding">24dp</dimen>
         <dimen name="form_spacing">12dp</dimen>
-        <dimen name="button_height">48dp</dimen>
+        <dimen name="button_height">56dp</dimen>
         <dimen name="result_padding">16dp</dimen>
         <dimen name="result_spacing">8dp</dimen>
-        <dimen name="photo_height">180dp</dimen>
+        <dimen name="photo_height">260dp</dimen>
+        <dimen name="card_overlap">40dp</dimen>
+        <dimen name="card_corner">32dp</dimen>
+        <dimen name="field_corner">16dp</dimen>
+        <dimen name="dot_size">8dp</dimen>
+        <dimen name="dot_spacing">6dp</dimen>
+        <dimen name="dot_margin">24dp</dimen>
 </resources>
