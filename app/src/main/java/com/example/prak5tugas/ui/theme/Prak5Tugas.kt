@@ -125,4 +125,35 @@ fun Biodata(modifier: Modifier = Modifier) {
                 singleLine = true
             )
 
+            Text(
+                text = stringResource(R.string.experience_label),
+                style = MaterialTheme.typography.titleMedium,
+                color = colorResource(R.color.form_text)
+            )
+
+            experienceOptions.forEach { option ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    RadioButton(
+                        selected = experience == option,
+                        onClick = {
+                            experience = option
+                            showResult = false
+                        }
+                    )
+                    Text(
+                        text = option,
+                        color = colorResource(R.color.form_text)
+                    )
+                }
+            }
+
+            Text(
+                text = stringResource(R.string.skills_label),
+                style = MaterialTheme.typography.titleMedium,
+                color = colorResource(R.color.form_text)
+            )
+
 }
