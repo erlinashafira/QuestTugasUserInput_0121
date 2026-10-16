@@ -3,4 +3,10 @@
 
     <string name="form_title">Form Data Diri</string>
     <string name="form_subtitle">Lengkapi data diri kamu</string>
+
+    <string name="first_name_label">Nama Depan</string>
+    <string name="last_name_label">Nama Belakang</string>
+    <string name="email_label">Email</string>
+    <string name="birth_date_label">Tanggal Lahir</string>
+    <string name="birth_date_hint">DD/MM/YYYY</string>
 </resources>
