@@ -111,4 +111,18 @@ fun Biodata(modifier: Modifier = Modifier) {
                 singleLine = true
             )
 
+            OutlinedTextField(
+                value = birthDate,
+                onValueChange = {
+                    birthDate = it
+                    showResult = false
+                },
+                label = { Text(stringResource(R.string.birth_date_label)) },
+                placeholder = {
+                    Text(stringResource(R.string.birth_date_hint))
+                },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
+
 }
