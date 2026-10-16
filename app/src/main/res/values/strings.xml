@@ -23,4 +23,14 @@
         <item>UI/UX</item>
         <item>Web</item>
     </string-array>
+
+    <string name="proceed_button">Proceed</string>
+    <string name="result_title">Data Diri</string>
+    <string name="result_name">Nama: %1$s %2$s</string>
+    <string name="result_email">Email: %1$s</string>
+    <string name="result_birth_date">Tanggal Lahir: %1$s</string>
+    <string name="result_experience">Experience: %1$s</string>
+    <string name="result_skills">Skills: %1$s</string>
+    <string name="list_separator">, </string>
+</resources>
 </resources>
