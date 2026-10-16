@@ -1,11 +1,14 @@
 package com.example.prak5tugas.ui.theme
 
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.R
+import androidx.compose.ui.res.integerResource
 import androidx.compose.ui.res.stringArrayResource
+import kotlinx.coroutines.delay
 
 fun Biodata(modifier: Modifier = Modifier) {
     val experienceOptions = stringArrayResource(R.array.experience_options)
@@ -29,4 +32,13 @@ fun Biodata(modifier: Modifier = Modifier) {
                 birthDate.isNotBlank() &&
                 experience.isNotBlank() &&
                 selectedSkills.isNotEmpty()
+
+    LaunchedEffect(showResult) {
+        if (showResult) {
+            delay(
+                integerResource(R.integer.result_display_duration).toLong()
+            )
+            showResult = false
+        }
+    }
 }
