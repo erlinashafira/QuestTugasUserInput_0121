@@ -199,5 +199,73 @@ fun Biodata(modifier: Modifier = Modifier) {
                 Text(text = stringResource(R.string.proceed_button))
             }
 
+            if (showResult) {
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(R.dimen.result_spacing)
+                    )
+                )
+
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(dimensionResource(R.dimen.result_padding)),
+                    verticalArrangement = Arrangement.spacedBy(
+                        dimensionResource(R.dimen.result_spacing)
+                    )
+                ) {
+                    Text(
+                        text = stringResource(R.string.result_title),
+                        style = MaterialTheme.typography.titleLarge,
+                        color = colorResource(R.color.form_text)
+                    )
+
+                    Text(
+                        text = stringResource(
+                            R.string.result_name,
+                            firstName,
+                            lastName
+                        ),
+                        color = colorResource(R.color.form_text)
+                    )
+
+                    Text(
+                        text = stringResource(
+                            R.string.result_email,
+                            email
+                        ),
+                        color = colorResource(R.color.form_text)
+                    )
+
+                    Text(
+                        text = stringResource(
+                            R.string.result_birth_date,
+                            birthDate
+                        ),
+                        color = colorResource(R.color.form_text)
+                    )
+
+                    Text(
+                        text = stringResource(
+                            R.string.result_experience,
+                            experience
+                        ),
+                        color = colorResource(R.color.form_text)
+                    )
+
+                    Text(
+                        text = stringResource(
+                            R.string.result_skills,
+                            selectedSkills.joinToString(
+                                stringResource(R.string.list_separator)
+                            )
+                        ),
+                        color = colorResource(R.color.form_text)
+                    )
+                }
+            }
+        }
+    }
+}
 
         }
