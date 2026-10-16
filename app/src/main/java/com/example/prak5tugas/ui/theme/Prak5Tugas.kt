@@ -1,5 +1,6 @@
 package com.example.prak5tugas.ui.theme
 
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -16,5 +17,6 @@ fun Biodata(modifier: Modifier = Modifier) {
     var birthDate by remember { mutableStateOf("") }
     var experience by remember { mutableStateOf("") }
 
-
+    val selectedSkills = remember { mutableStateListOf<String>() }
+    var showResult by remember { mutableStateOf(false) }
 }
