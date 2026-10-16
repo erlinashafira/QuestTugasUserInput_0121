@@ -16,4 +16,11 @@
         <item>Intermediate</item>
         <item>Expert</item>
     </string-array>
+
+    <string name="skills_label">Skills</string>
+    <string-array name="skill_options">
+        <item>Android</item>
+        <item>UI/UX</item>
+        <item>Web</item>
+    </string-array>
 </resources>
