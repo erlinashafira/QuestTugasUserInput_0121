@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -18,6 +19,7 @@ import androidx.compose.ui.res.integerResource
 import androidx.compose.ui.res.stringArrayResource
 import kotlinx.coroutines.delay
 
+@Composable
 fun Biodata(modifier: Modifier = Modifier) {
     val experienceOptions = stringArrayResource(R.array.experience_options)
     val skillOptions = stringArrayResource(R.array.skill_options)
@@ -49,6 +51,7 @@ fun Biodata(modifier: Modifier = Modifier) {
             showResult = false
         }
     }
+
     Scaffold(
         modifier = modifier.fillMaxSize(),
         containerColor = colorResource(R.color.form_background)
@@ -62,5 +65,17 @@ fun Biodata(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.spacedBy(
                 dimensionResource(R.dimen.form_spacing)
             )
-        )
+        ) {
+            Text(
+                text = stringResource(R.string.form_title),
+                style = MaterialTheme.typography.headlineSmall,
+                color = colorResource(R.color.form_text)
+            )
+
+            Text(
+                text = stringResource(R.string.form_subtitle),
+                style = MaterialTheme.typography.bodyMedium,
+                color = colorResource(R.color.form_secondary_text)
+            )
+
 }
