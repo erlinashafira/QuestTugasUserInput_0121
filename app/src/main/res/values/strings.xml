@@ -1,14 +1,18 @@
 <resources>
     <string name="app_name">Prak5Tugas</string>
 
-    <string name="form_title">Form Data Diri</string>
-    <string name="form_subtitle">Lengkapi data diri kamu</string>
+    <string name="form_title">Form Biodata</string>
+    <string name="form_subtitle">Silahkan isi biodata Anda dibawah ini !!!</string>
+    <string name="photo_description">Foto header form biodata</string>
 
     <string name="first_name_label">Nama Depan</string>
     <string name="last_name_label">Nama Belakang</string>
     <string name="email_label">Email</string>
-    <string name="birth_date_label">Tanggal Lahir</string>
-    <string name="birth_date_hint">DD/MM/YYYY</string>
+    <string name="birth_date_label">Tgl Lahir</string>
+    <string name="date_format">dd/MM/yyyy</string>
+    <string name="date_picker_description">Pilih tanggal lahir</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Batal</string>
 
     <string name="experience_label">Experience</string>
     <string-array name="experience_options">
@@ -17,7 +21,7 @@
         <item>Expert</item>
     </string-array>
 
-    <string name="skills_label">Skills</string>
+    <string name="skills_label">Pilih Skill Anda :</string>
     <string-array name="skill_options">
         <item>Android</item>
         <item>UI/UX</item>
