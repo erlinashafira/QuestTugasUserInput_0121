@@ -156,4 +156,29 @@ fun Biodata(modifier: Modifier = Modifier) {
                 color = colorResource(R.color.form_text)
             )
 
+            skillOptions.forEach { skill ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Checkbox(
+                        checked = skill in selectedSkills,
+                        onCheckedChange = { checked ->
+                            if (checked) {
+                                if (skill !in selectedSkills) {
+                                    selectedSkills.add(skill)
+                                }
+                            } else {
+                                selectedSkills.remove(skill)
+                            }
+                            showResult = false
+                        }
+                    )
+                    Text(
+                        text = skill,
+                        color = colorResource(R.color.form_text)
+                    )
+                }
+            }
+
 }
