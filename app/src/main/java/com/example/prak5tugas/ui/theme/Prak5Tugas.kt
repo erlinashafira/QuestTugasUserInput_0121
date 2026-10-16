@@ -78,4 +78,15 @@ fun Biodata(modifier: Modifier = Modifier) {
                 color = colorResource(R.color.form_secondary_text)
             )
 
+            OutlinedTextField(
+                value = firstName,
+                onValueChange = {
+                    firstName = it
+                    showResult = false
+                },
+                label = { Text(stringResource(R.string.first_name_label)) },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
+
 }
