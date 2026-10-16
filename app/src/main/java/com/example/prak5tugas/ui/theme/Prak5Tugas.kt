@@ -181,4 +181,23 @@ fun Biodata(modifier: Modifier = Modifier) {
                 }
             }
 
-}
+            Button(
+                onClick = {
+                    showResult = true
+                },
+                enabled = formComplete,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(dimensionResource(R.dimen.button_height)),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(R.color.proceed_blue),
+                    disabledContainerColor = colorResource(R.color.proceed_gray),
+                    contentColor = colorResource(R.color.button_text),
+                    disabledContentColor = colorResource(R.color.button_text)
+                )
+            ) {
+                Text(text = stringResource(R.string.proceed_button))
+            }
+
+
+        }
