@@ -1,6 +1,7 @@
 package com.example.prak5tugas.ui.theme
 
-import com.example.prak5tugas.R
+import android.util.Patterns
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -31,15 +32,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.integerResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
+import com.example.prak5tugas.R
 
 @Composable
 fun Biodata(modifier: Modifier = Modifier) {
-    val experienceOptions = stringArrayResource(R.array.experience_options)
-    val skillOptions = stringArrayResource(R.array.skill_options)
+    val experienceOptions =
+        stringArrayResource(R.array.experience_options)
+    val skillOptions =
+        stringArrayResource(R.array.skill_options)
 
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
@@ -47,15 +51,16 @@ fun Biodata(modifier: Modifier = Modifier) {
     var birthDate by remember { mutableStateOf("") }
     var experience by remember { mutableStateOf("") }
 
-    val selectedSkills = remember { mutableStateListOf<String>() }
+    val selectedSkills = remember {
+        mutableStateListOf<String>()
+    }
+
     var showResult by remember { mutableStateOf(false) }
 
     val formComplete =
         firstName.isNotBlank() &&
                 lastName.isNotBlank() &&
-                email.isNotBlank() &&
-                android.util.Patterns.EMAIL_ADDRESS
-                    .matcher(email.trim()).matches() &&
+                Patterns.EMAIL_ADDRESS.matcher(email.trim()).matches() &&
                 birthDate.isNotBlank() &&
                 experience.isNotBlank() &&
                 selectedSkills.isNotEmpty()
@@ -74,6 +79,7 @@ fun Biodata(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize(),
         containerColor = colorResource(R.color.form_background)
     ) { innerPadding ->
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -84,10 +90,19 @@ fun Biodata(modifier: Modifier = Modifier) {
                 dimensionResource(R.dimen.form_spacing)
             )
         ) {
+
             Text(
                 text = stringResource(R.string.form_title),
                 style = MaterialTheme.typography.headlineSmall,
                 color = colorResource(R.color.form_text)
+            )
+
+            Image(
+                painter = painterResource(R.drawable.foto),
+                contentDescription = stringResource(R.string.form_title),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(dimensionResource(R.dimen.photo_height))
             )
 
             Text(
@@ -102,7 +117,9 @@ fun Biodata(modifier: Modifier = Modifier) {
                     firstName = it
                     showResult = false
                 },
-                label = { Text(stringResource(R.string.first_name_label)) },
+                label = {
+                    Text(stringResource(R.string.first_name_label))
+                },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true
             )
@@ -113,7 +130,9 @@ fun Biodata(modifier: Modifier = Modifier) {
                     lastName = it
                     showResult = false
                 },
-                label = { Text(stringResource(R.string.last_name_label)) },
+                label = {
+                    Text(stringResource(R.string.last_name_label))
+                },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true
             )
@@ -124,7 +143,9 @@ fun Biodata(modifier: Modifier = Modifier) {
                     email = it
                     showResult = false
                 },
-                label = { Text(stringResource(R.string.email_label)) },
+                label = {
+                    Text(stringResource(R.string.email_label))
+                },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true
             )
@@ -135,7 +156,9 @@ fun Biodata(modifier: Modifier = Modifier) {
                     birthDate = it
                     showResult = false
                 },
-                label = { Text(stringResource(R.string.birth_date_label)) },
+                label = {
+                    Text(stringResource(R.string.birth_date_label))
+                },
                 placeholder = {
                     Text(stringResource(R.string.birth_date_hint))
                 },
@@ -161,6 +184,7 @@ fun Biodata(modifier: Modifier = Modifier) {
                             showResult = false
                         }
                     )
+
                     Text(
                         text = option,
                         color = colorResource(R.color.form_text)
@@ -189,9 +213,11 @@ fun Biodata(modifier: Modifier = Modifier) {
                             } else {
                                 selectedSkills.remove(skill)
                             }
+
                             showResult = false
                         }
                     )
+
                     Text(
                         text = skill,
                         color = colorResource(R.color.form_text)
@@ -208,13 +234,19 @@ fun Biodata(modifier: Modifier = Modifier) {
                     .fillMaxWidth()
                     .height(dimensionResource(R.dimen.button_height)),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(R.color.proceed_blue),
-                    disabledContainerColor = colorResource(R.color.proceed_gray),
-                    contentColor = colorResource(R.color.button_text),
-                    disabledContentColor = colorResource(R.color.button_text)
+                    containerColor =
+                        colorResource(R.color.proceed_blue),
+                    disabledContainerColor =
+                        colorResource(R.color.proceed_gray),
+                    contentColor =
+                        colorResource(R.color.button_text),
+                    disabledContentColor =
+                        colorResource(R.color.button_text)
                 )
             ) {
-                Text(text = stringResource(R.string.proceed_button))
+                Text(
+                    text = stringResource(R.string.proceed_button)
+                )
             }
 
             if (showResult) {
@@ -227,7 +259,9 @@ fun Biodata(modifier: Modifier = Modifier) {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(dimensionResource(R.dimen.result_padding)),
+                        .padding(
+                            dimensionResource(R.dimen.result_padding)
+                        ),
                     verticalArrangement = Arrangement.spacedBy(
                         dimensionResource(R.dimen.result_spacing)
                     )
