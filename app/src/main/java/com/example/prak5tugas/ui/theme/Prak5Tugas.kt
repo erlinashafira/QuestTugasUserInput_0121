@@ -19,4 +19,14 @@ fun Biodata(modifier: Modifier = Modifier) {
 
     val selectedSkills = remember { mutableStateListOf<String>() }
     var showResult by remember { mutableStateOf(false) }
+
+    val formComplete =
+        firstName.isNotBlank() &&
+                lastName.isNotBlank() &&
+                email.isNotBlank() &&
+                android.util.Patterns.EMAIL_ADDRESS
+                    .matcher(email.trim()).matches() &&
+                birthDate.isNotBlank() &&
+                experience.isNotBlank() &&
+                selectedSkills.isNotEmpty()
 }
