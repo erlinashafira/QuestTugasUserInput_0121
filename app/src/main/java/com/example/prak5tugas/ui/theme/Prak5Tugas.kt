@@ -1,5 +1,6 @@
 package com.example.prak5tugas.ui.theme
 
+import com.example.prak5tugas.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -59,11 +60,12 @@ fun Biodata(modifier: Modifier = Modifier) {
                 experience.isNotBlank() &&
                 selectedSkills.isNotEmpty()
 
+    val resultDisplayDuration =
+        integerResource(R.integer.result_display_duration)
+
     LaunchedEffect(showResult) {
         if (showResult) {
-            delay(
-                integerResource(R.integer.result_display_duration).toLong()
-            )
+            delay(resultDisplayDuration.toLong())
             showResult = false
         }
     }
