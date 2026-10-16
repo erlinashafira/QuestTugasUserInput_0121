@@ -100,4 +100,15 @@ fun Biodata(modifier: Modifier = Modifier) {
                 singleLine = true
             )
 
+            OutlinedTextField(
+                value = email,
+                onValueChange = {
+                    email = it
+                    showResult = false
+                },
+                label = { Text(stringResource(R.string.email_label)) },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
+
 }
