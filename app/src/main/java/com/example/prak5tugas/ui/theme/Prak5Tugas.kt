@@ -110,6 +110,7 @@ fun Biodata(modifier: Modifier = Modifier) {
     }
 
     val dateFormatPattern = stringResource(R.string.date_format)
+    val utcTimeZone = stringResource(R.string.timezone_utc)
 
     val textColor = colorResource(R.color.form_text)
     val titleColor = colorResource(R.color.form_title)
@@ -117,10 +118,10 @@ fun Biodata(modifier: Modifier = Modifier) {
     val fieldColors = OutlinedTextFieldDefaults.colors(
         focusedBorderColor = titleColor,
         unfocusedBorderColor = colorResource(R.color.field_border),
+        focusedPlaceholderColor = colorResource(R.color.field_label),
+        unfocusedPlaceholderColor = colorResource(R.color.field_label),
         focusedTextColor = textColor,
         unfocusedTextColor = textColor,
-        focusedLabelColor = titleColor,
-        unfocusedLabelColor = colorResource(R.color.field_label),
         cursorColor = titleColor
     )
 
@@ -450,7 +451,7 @@ fun Biodata(modifier: Modifier = Modifier) {
                                                     dateFormatPattern,
                                                     Locale.getDefault()
                                                 )
-                                                formatter.timeZone = TimeZone.getTimeZone("UTC")
+                                                formatter.timeZone = TimeZone.getTimeZone(utcTimeZone)
                                                 birthDate = formatter.format(Date(millis))
                                                 showResult = false
                                             }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Prak5Tugas</string>
 
+    <string name="timezone_utc">UTC</string>
     <string name="form_title">Form Biodata</string>
     <string name="form_subtitle">Silahkan isi biodata Anda dibawah ini !!!</string>
     <string name="photo_description">Foto header form biodata</string>
